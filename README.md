@@ -19,6 +19,6 @@ In this dataset we can find the following tables:
 This repository contains the following notebooks
 
 - [Data Sampling](Data%20Imputation%20and%20Feature%20Engineering.ipynb): This notebook features a first look at the data and subsamples the data for the movie and TVMovie categories
-- [Data Imputaion and Feature Engineering](Data%20Imputaion%20and%20Feature%20Engineering.ipynb)
+- [Data Imputaion and Feature Engineering](Data%20Imputation%20and%20Feature%20Engineering.ipynb)
 - [EDA][EDA.ipynb]
 - [Modeling][Modeling.ipynb]
