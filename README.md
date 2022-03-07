@@ -64,6 +64,8 @@ This repository contains the following notebooks
     - Random Forest (Overfits)
     - XGBoost (Best Performer)
     - Neural Net
+    
+- The XGBoost model performed the best with and R2 Score of ~0.83 on test data. 
 
 - Looking at the coefficients of the linear model we can see that the `crew_mean` and `cast_mean` features have a very positive relationship with the rating. Certain genres like `film-noir`, `animation`, `short` and `western` also have a strong positive relationship with the IMDB rating. Other genres like `sci-fi` and `adventure` show a negative relationship
 
