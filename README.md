@@ -23,7 +23,36 @@ This repository contains the following notebooks
 - [EDA](EDA.ipynb): This performs exploratory analysis on our created dataset. Here we explore the relationship of our features with our target variable 
 - [Modeling](Modeling.ipynb): This notebook features data preprocessing, model building, and model tuning.
 
-## Key Insights
+## Summary and Key Insights
+
+### Sampling
+- Out of the 1,219,870 unique titles, ~ 328,000 were either movie ot TV movie titles
+
+### Data Imputation and Feature Engineeing
+
+- Imputed values for genres using the distribution of genres that the crew has worked on in the past
+- Imputed runtime and release yer using the TMDB API
+- Created features for professional quality pertaining to both the cast and the crew 
+- Created features for the number o fregions that a movie was featured in
+- One-hot encoded the genre values
+
+### EDA
+
+- Found relationships between each of our features and our target (IMDB ratings)
+- There is a strong positive relationship between the professional quality features and the IMDB rating
+- There is a weak postive relationship between numbr of votes and number of votes with the IMDB rating
+- Runtime has no effect on the IMDB rating
+- **Insights**: We see certain genres have ratings distributions deviating from the average
+    Better than average:
+    - War
+    - Sport
+    - Music and Musicals
+    - Documentaries
+
+    Worse than average:
+    - Sci-fi
+    - Horror
+    - Adult
 
 
 
