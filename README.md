@@ -26,21 +26,21 @@ This repository contains the following notebooks
 ## Summary and Key Insights
 
 ### Sampling
-- Out of the 1,219,870 unique titles, ~ 328,000 were either movie ot TV movie titles
+- Out of the 1,219,870 unique titles, ~ 328,000 were either movie or TV movie titles
 
-### Data Imputation and Feature Engineeing
+### Data Imputation and Feature Engineering
 
 - Imputed values for genres using the distribution of genres that the crew has worked on in the past
 - Imputed runtime and release yer using the TMDB API
 - Created features for professional quality pertaining to both the cast and the crew 
-- Created features for the number o fregions that a movie was featured in
+- Created features for the number of regions that a movie was featured in
 - One-hot encoded the genre values
 
 ### EDA
 
 - Found relationships between each of our features and our target (IMDB ratings)
 - There is a strong positive relationship between the professional quality features and the IMDB rating
-- There is a weak postive relationship between numbr of votes and number of votes with the IMDB rating
+- There is a weak positive relationship between the number of votes and the number of votes with the IMDB rating
 - Runtime has no effect on the IMDB rating
 - We see certain genres have ratings distributions deviating from the average
   
@@ -54,6 +54,23 @@ This repository contains the following notebooks
     - Sci-fi
     - Horror
     - Adult
+    
+- There is a strong correlation between `Adult` and `isAdult` (as expected) so isAdult was dropped while modeling
+
+### Modeling
+
+- Tried four different regression models
+    - Linear Regression (Baseline)
+    - Random Forest (Overfits)
+    - XGBoost (Best Performer)
+    - Neural Net
+
+- Looking at the coefficients of the linear model we can see that the `crew_mean` and `cast_mean` features have a very positive relationship with the rating. Certain genres like `film-noir`, `animation`, `short` and `western` also have a strong positive relationship with the IMDB rating. Other genres like `sci-fi` and `adventure` show a negative relationship
+
+- Looking at the feature importance of the XGBoost model, we can see that the professional quality features play a very important role in the model decision. This indicates that the strongest predictor for the IMDb rating of the movie is the quality of the crew. Another interesting insight is that the CREW quality matter more than the CAST quality when it comes to IMDB rating. Most production houses will weigh the cast more when it comes to "bankability" but the IMDb rating depends more on the directors, writers, etc.
+
+- Performed hyperparameter tuning using hyperopt which uses bayesian search to find an optimal set of parameters. 
+- The largest mispredictions occur when the cast of the movie is decent but the movie overall is bad.
 
 
 
@@ -67,6 +84,8 @@ Given more time, we can improve and augment this dataset to produce better predi
 - We can see that the model's predictions heavily depend on the performance of the cast and crew. Finding a way to better define the performance index of the cast and the crew may impact the model's predictive power.
 - Adding temporal features for the cast and the crew may aid in the model's performance. How well a movie doesn't necessarily depend only on the cast's and crew's past performances but also on their performance trajectory. Having a feature that encodes this temporal aspect may help in increasing predictive capability.
 - Film budgets are also a strong indicator of quality. Finding a way to add in the budget could help improve the model's predictive performance. This information was available on the TMDB API, but I couldn't incorporate it due to the rate-limiting constraints
+- We could better impute the genres if we also had reviews for each of the movies. Performing topic modeling or text classification can help us map certain keywords to certain genres.
+- We can add external ratings like Metacritic score which correlate with the IMDB ratings
 
 ### Models
 - More hyper-parameter tuning to gain better model performance.
