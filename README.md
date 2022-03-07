@@ -42,7 +42,8 @@ This repository contains the following notebooks
 - There is a strong positive relationship between the professional quality features and the IMDB rating
 - There is a weak postive relationship between numbr of votes and number of votes with the IMDB rating
 - Runtime has no effect on the IMDB rating
-- **Insights**: We see certain genres have ratings distributions deviating from the average
+- We see certain genres have ratings distributions deviating from the average
+  
     Better than average:
     - War
     - Sport
