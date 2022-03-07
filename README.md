@@ -65,7 +65,7 @@ This repository contains the following notebooks
     - XGBoost (Best Performer)
     - Neural Net
     
-- The XGBoost model performed the best with and R2 Score of ~0.83 on test data. 
+- The XGBoost model performed the best with an R2 Score of ~0.83 on test data. 
 
 - Looking at the coefficients of the linear model we can see that the `crew_mean` and `cast_mean` features have a very positive relationship with the rating. Certain genres like `film-noir`, `animation`, `short` and `western` also have a strong positive relationship with the IMDB rating. Other genres like `sci-fi` and `adventure` show a negative relationship
 
@@ -90,9 +90,18 @@ Given more time, we can improve and augment this dataset to produce better predi
 - We can add external ratings like Metacritic score which correlate with the IMDB ratings
 
 ### Models
+
 - More hyper-parameter tuning to gain better model performance.
 - More model analysis to understand what distribution of features have the lowest predictive power
 
+### Inference
 
+- Build an API service that can do real-time inference for new movies.
 
+## Takeaways
+
+- Augment the dataset with external sources and APIs (TMDB)
+- Since the model relies on cast and crew metrics, build more features related to professional quality.
+- Crew metrics matter the most relative to other features
+- Certain genres of film have a higher average rating than others
 
