@@ -84,7 +84,7 @@ Given more time, we can improve and augment this dataset to produce better predi
 
 - Augment the dataset with external sources like the TMDB API. I did use the TMDB API for data imputation, but due to its rate limiter for the free tier, I wasn't able to use it to enrich the entire dataset within the given timeframe.
 - We can see that the model's predictions heavily depend on the performance of the cast and crew. Finding a way to better define the performance index of the cast and the crew may impact the model's predictive power.
-- Adding temporal features for the cast and the crew may aid in the model's performance. How well a movie doesn't necessarily depend only on the cast's and crew's past performances but also on their performance trajectory. Having a feature that encodes this temporal aspect may help in increasing predictive capability.
+- Adding temporal features for the cast and the crew may aid in the model's performance. How well a movie does isn't necessarily dependent only on the cast's and crew's past performances but also on their performance trajectory. Having a feature that encodes this temporal aspect may help in increasing predictive capability.
 - Film budgets are also a strong indicator of quality. Finding a way to add in the budget could help improve the model's predictive performance. This information was available on the TMDB API, but I couldn't incorporate it due to the rate-limiting constraints
 - We could better impute the genres if we also had reviews for each of the movies. Performing topic modeling or text classification can help us map certain keywords to certain genres.
 - We can add external ratings like Metacritic score which correlate with the IMDB ratings
